@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Kaikei</title>
+    <style type="text/css">
+      div.inp {
+        width: 50px;
+        height: 50px;
+        top: 50px;
+        left: 50px;
+      }
+      div.but {
+        width: 150px;
+        height: 50px;
+        top: 50px;
+        left: 150px;
+      }
+      div.hin {
+        width: 150px;
+        height: 50px;
+        top: 100px;
+        left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="form1" action="#">
+      <div class="inp">
+        <input type="text" id="key" value="0" />
+        <input type="button" onclick="fncGetHinmei(key.value)" value="表示" />
+      </div>
+      <div class="hin">
+        <input type="text" id="Hinmei" value="" />
+        <input type="text" id="Kingak" value="0" />
+      </div>
+      <div class="but">
+        <input type="button" onclick="fncShukei()" value="集計" />
+      </div>
+      <input type="text" id="Out" value="0" />
+    </form>
+    <script>
+      function fncShukei() {
+        Out.value = eval(Out.value) + eval(Kingak.value);
+      }
+      function fncGetHinmei(key) {
+        if (key == 1) {
+          Hinmei.value = "ラムネ";
+          Kingak.value = 100;
+        }
+        if (key == 2) {
+          Hinmei.value = "チョコレート";
+          Kingak.value = 200;
+        }
+      }
+    </script>
+  </body>
+</html>
