@@ -28,17 +28,21 @@
   <body>
     <form id="form1" action="#">
       <div class="inp">
-        <input type="text" id="key" value="0" />
-        <input type="button" onclick="fncGetHinmei(key.value)" value="表示" />
+        <input type="text" id="key" onchange="fncGetHinmei(key.value)" value="0" />
       </div>
       <div class="hin">
         <input type="text" id="Hinmei" value="" />
-        <input type="text" id="Kingak" value="0" />
       </div>
+      <input type="text" id="Kingak" value="0" />円
+
       <div class="but">
         <input type="button" onclick="fncShukei()" value="集計" />
+        <input type="button" onclick="fncReset()"  value="リセット" />
       </div>
-      <input type="text" id="Out" value="0" />
+      合計は
+      <br>
+      <input type="text" id="Out" value="0" />円です。
+      </br>
     </form>
     <script>
       function fncShukei() {
@@ -53,6 +57,9 @@
           Hinmei.value = "チョコレート";
           Kingak.value = 200;
         }
+      }
+      function fncReset(){
+        Out.value = "0";
       }
     </script>
   </body>
